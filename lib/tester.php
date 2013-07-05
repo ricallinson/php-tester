@@ -71,7 +71,7 @@ class Tester {
             try {
                 $fn();
             } catch (\Exception $error) {
-                self::log($this->suite, "", $error);
+                self::log(self::$suite, "", $error);
             }
         }
 
