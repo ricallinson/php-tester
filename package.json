@@ -1,0 +1,25 @@
+{
+    "name": "php-tester",
+    "description": "A PHP testing module.",
+    "version": "0.0.1",
+    "author": {
+        "name": "Ric Allinson",
+        "email": "npm@ricallinson.com"
+    },
+    "engines": {
+        "php": ">= 5.4.0"
+    },
+    "dependencies" : {
+    },
+    "devDependencies" : {
+        "php-require": "*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:ricallinson/php-require.git"
+    },
+    "scripts": {
+        "test": "./test/run"
+    },
+    "license": "MIT"
+}
