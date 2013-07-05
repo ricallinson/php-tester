@@ -47,7 +47,7 @@ class Tester {
         self::$renderer = $renderer;
     }
 
-    public function run() {
+    public function run($dir = null) {
 
         self::$suite = "";
         self::$total = 0;
@@ -56,7 +56,11 @@ class Tester {
 
         $start = microtime(true);
 
-        $this->load(getcwd() . DIRECTORY_SEPARATOR . "test");
+        if (!$dir) {
+            $dir = getcwd() . DIRECTORY_SEPARATOR . "test";
+        }
+
+        $this->load($dir);
 
         self::$renderer->begin();
 
