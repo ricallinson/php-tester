@@ -78,7 +78,7 @@ class Tester {
         $end = microtime(true) - $start;
 
         self::$renderer->errors(self::$errors);
-        self::$renderer->finish(self::$total, round($end, 0), self::$errors);
+        self::$renderer->finish(self::$total, $end, self::$errors);
 
         exit(count(self::$errors));
     }

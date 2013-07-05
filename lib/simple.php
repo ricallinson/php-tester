@@ -8,7 +8,7 @@ class SimpleRenderer {
     }
 
     public function finish($total, $time, $status) {
-        print("\n\n" . ($status ? "Failed" : "Passed") . " - " . $total . " complete (" . $time . "ms)\n\n");
+        print("\n\n" . ($status ? "Failed" : "Passed") . " - " . $total . " complete (" . round($time * 1000, 0) . "ms)\n\n");
     }
 
     public function success() {
