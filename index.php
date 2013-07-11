@@ -1,9 +1,8 @@
 <?php
 use php_require\php_tester\Tester;
 
-define("SLASH", DIRECTORY_SEPARATOR);
-$tester = $require(__DIR__ . SLASH . "lib" . SLASH . "tester");
-$renderer = $require(__DIR__. SLASH . "lib" . SLASH . "simple");
+$tester = $require(__DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "tester");
+$renderer = $require(__DIR__. DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "simple");
 
 // Active assert and make it quiet
 assert_options(ASSERT_ACTIVE, 1);
