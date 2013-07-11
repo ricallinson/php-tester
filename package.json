@@ -9,6 +9,9 @@
     "engines": {
         "php": ">= 5.4.0"
     },
+    "bin": {
+        "tester": "bin/tester"
+    },
     "dependencies" : {
         "php-require": "*"
     },
