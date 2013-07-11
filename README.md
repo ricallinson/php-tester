@@ -1,6 +1,6 @@
 # Php-tester
 
-Simple test framework for PHP inspired by (Mocha)[http://visionmedia.github.io/mocha/].
+Simple test framework for PHP inspired by [Mocha](http://visionmedia.github.io/mocha/).
 
 	<?php
 	describe("Array", function () {
