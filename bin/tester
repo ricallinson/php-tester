@@ -1,0 +1,5 @@
+#!/usr/bin/php
+<?php
+define("SLASH", DIRECTORY_SEPARATOR);
+require(__DIR__ . SLASH . ".." . SLASH . "node_modules" . SLASH . "php-require" . SLASH . "index.php");
+require(__DIR__ . SLASH . ".." . SLASH . "index.php");

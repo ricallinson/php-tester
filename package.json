@@ -10,9 +10,9 @@
         "php": ">= 5.4.0"
     },
     "dependencies" : {
+        "php-require": "*"
     },
     "devDependencies" : {
-        "php-require": "*"
     },
     "repository": {
         "type": "git",
