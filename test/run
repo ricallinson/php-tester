@@ -2,4 +2,4 @@ which php
 php -v
 
 cd ./test
-../bin/tester
+php ../bin/tester
