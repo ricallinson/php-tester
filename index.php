@@ -21,4 +21,8 @@ function it($text, $fn) {
 }
 
 $tester->renderer($renderer);
-$tester->run();
+
+// xdebug_start_code_coverage(XDEBUG_CC_UNUSED | XDEBUG_CC_DEAD_CODE);
+$errors = $tester->run();
+// echo json_encode(xdebug_get_code_coverage(), JSON_PRETTY_PRINT);
+exit($errors);

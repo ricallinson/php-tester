@@ -80,7 +80,7 @@ class Tester {
         self::$renderer->errors(self::$errors);
         self::$renderer->finish(self::$total, $end, self::$errors);
 
-        exit(count(self::$errors));
+        return count(self::$errors);
     }
 }
 
