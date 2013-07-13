@@ -1,2 +1,5 @@
+which php
+php -v
+
 cd ./test
 ../bin/tester
