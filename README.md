@@ -1,6 +1,8 @@
 # Php-tester
 
-Simple test framework for PHP inspired by [Mocha](http://visionmedia.github.io/mocha/).
+[![Build Status](https://secure.travis-ci.org/ricallinson/php-tester.png?branch=master)](http://travis-ci.org/ricallinson/php-tester)
+
+Simple test framework for PHP inspired by [Mocha](http://visionmedia.github.io/mocha/) for use with [php-require](https://github.com/ricallinson/php-require).
 
     ./test/test.php
     <?php
