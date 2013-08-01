@@ -26,6 +26,7 @@ function it($text, $fn) {
 
 $dir = getcwd() . DIRECTORY_SEPARATOR . "test";
 $renderer = "simple";
+$showLines = in_array("lines", $argv);
 
 /*
     Load the renderer to use.
@@ -62,10 +63,10 @@ $unused = 0;
 foreach ($files as $file => $lines) {
     // Only report files in the package folder && not files in the test directory.
     if (strpos($file, dirname($dir)) !== false && strpos($file, $dir) === false && strpos($file, "node_modules") === false) {
-        // echo $file . "\n";
         array_push($checked, $file);
+        if ($showLines) echo $file . ":\n";
         foreach ($lines as $num => $line) {
-            // echo $num . ": " . $line . "\n";
+            if ($showLines) echo $num . ": " . ($line === -1 ? "skipped" : "") . "\n";
             if ($line === 1) {
                 $total++;
                 $called++;
