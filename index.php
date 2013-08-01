@@ -52,6 +52,7 @@ $errors = $tester->run($dir);
 
 $files = xdebug_get_code_coverage();
 
+$checked = array();
 $total = 0;
 $called = 0;
 $missed = 0;
@@ -61,6 +62,7 @@ foreach ($files as $file => $lines) {
     // Only report files in the package folder && not files in the test directory.
     if (strpos($file, dirname($dir)) !== false && strpos($file, $dir) === false) {
         // echo $file . "\n";
+        array_push($checked, $file);
         foreach ($lines as $num => $line) {
             // echo $num . ": " . $line . "\n";
             if ($line === 1) {
@@ -78,6 +80,12 @@ foreach ($files as $file => $lines) {
 
 xdebug_stop_code_coverage(true);
 
-echo("Code covergae: " . round(($called / $total) * 100) . "%\n\n");
+echo("Checking covergae of files:\n\n");
+
+array_walk($checked, function ($item) {
+    echo($item. "\n");
+});
+
+echo("\nTotal code covergae: " . round(($called / $total) * 100) . "%\n\n");
 
 exit($errors);
