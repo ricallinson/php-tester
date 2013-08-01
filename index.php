@@ -60,7 +60,7 @@ $unused = 0;
 
 foreach ($files as $file => $lines) {
     // Only report files in the package folder && not files in the test directory.
-    if (strpos($file, dirname($dir)) !== false && strpos($file, $dir) === false) {
+    if (strpos($file, dirname($dir)) !== false && strpos($file, $dir) === false && strpos($file, "node_modules") === false) {
         // echo $file . "\n";
         array_push($checked, $file);
         foreach ($lines as $num => $line) {
