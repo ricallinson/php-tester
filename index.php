@@ -52,17 +52,25 @@ $errors = $tester->run($dir);
 
 $files = xdebug_get_code_coverage();
 
+$total = 0;
 $called = 0;
 $missed = 0;
+$unused = 0;
 
 foreach ($files as $file => $lines) {
-    if (strpos($file, $dir) !== false) {
+    // Only report files in the package folder && not files in the test directory.
+    if (strpos($file, dirname($dir)) !== false && strpos($file, $dir) === false) {
+        // echo $file . "\n";
         foreach ($lines as $num => $line) {
             // echo $num . ": " . $line . "\n";
             if ($line === 1) {
+                $total++;
                 $called++;
             } else if ($line === -1) {
+                $total++;
                 $missed++;
+            } else if ($line === -2) {
+                $unused++;
             }
         }
     }
@@ -70,6 +78,6 @@ foreach ($files as $file => $lines) {
 
 xdebug_stop_code_coverage(true);
 
-echo("Code covergae: " . (100 - (($called + $missed / 100) * $missed)) . "%\n\n");
+echo("Code covergae: " . round(($called / $total) * 100) . "%\n\n");
 
 exit($errors);
