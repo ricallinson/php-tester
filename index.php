@@ -80,12 +80,14 @@ foreach ($files as $file => $lines) {
 
 xdebug_stop_code_coverage(true);
 
-echo("Checking covergae of files:\n\n");
-
-array_walk($checked, function ($item) {
-    echo($item. "\n");
-});
-
-echo("\nTotal code covergae: " . round(($called / $total) * 100) . "%\n\n");
+if ($total > 0) {
+    echo("Checking covergae of files:\n\n");
+    array_walk($checked, function ($item) {
+        echo($item. "\n");
+    });
+    echo("\nTotal code covergae: " . round(($called / $total) * 100) . "%\n\n");
+} else {
+    echo("Coverage could not be generated.\n\n");
+}
 
 exit($errors);
