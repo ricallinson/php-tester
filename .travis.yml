@@ -7,6 +7,6 @@ php:
 
 before_install:
   - sudo apt-get install node
-  - npm install
+  - "npm install git://github.com/ricallinson/php-require.git#master"
 
 script: npm test
