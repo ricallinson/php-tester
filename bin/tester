@@ -27,7 +27,7 @@ $fullpath = $fullpath ? $fullpath : findPhpRequire(__DIR__, array("php-require",
     This is so when you do a "global $require" you'll have access to the local node-modules folder.
 */
 
-$_SERVER["SCRIPT_NAME"] = getcwd() . DIRECTORY_SEPARATOR . "php-tester-mock-index-file.php";
+$_SERVER["SCRIPT_NAME"] = getcwd() . DIRECTORY_SEPARATOR . "test" . DIRECTORY_SEPARATOR . "php-tester-mock-index-file.php";
 
 require_once($fullpath);
 require_once(__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "index.php");
