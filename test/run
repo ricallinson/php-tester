@@ -1,2 +1,1 @@
-cd ./test
-php ../bin/tester
+php ./bin/tester

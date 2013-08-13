@@ -8,9 +8,5 @@ describe("Array", function () {
             assert(array_search(3, $array) === 2);
             assert(array_search(6, $array) === false);
         });
-
-        if (false) {
-        	echo "Never called";
-        }
     });
 });
